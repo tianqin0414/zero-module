@@ -1,9 +1,9 @@
 server:
-  port: 8444
+  port: 4444
 
 spring:
   datasource:
-    url: jdbc:mysql://47.97.41.157:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://47.97.41.157:3306/zero?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
     password: __ct9368
   redis:
