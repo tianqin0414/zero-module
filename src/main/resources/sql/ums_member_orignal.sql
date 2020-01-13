@@ -39,7 +39,7 @@ CREATE TABLE `ums_user` (
   `birthday` date DEFAULT NULL COMMENT '生日',
   `city` varchar(64) DEFAULT NULL COMMENT '所做城市',
   `job` varchar(100) DEFAULT NULL COMMENT '职业',
-  `personalized_signature` varchar(200) DEFAULT NULL COMMENT '个性签名',
+  `personalized_signature` varchar(200) DEFAULT NULL COMMENT '个性签名(限制144个字)',
   `source_type` int(1) DEFAULT NULL COMMENT '用户来源',
   `integration` int(11) DEFAULT NULL COMMENT '积分',
   `growth` int(11) DEFAULT NULL COMMENT '成长值',
