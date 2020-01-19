@@ -32,7 +32,7 @@ CREATE TABLE `ums_user` (
  `long_video` varchar(255) DEFAULT '' COMMENT '长视频',
  `price` decimal(10,2) DEFAULT 0 COMMENT '朋友圈长视频价格(未发布广场)',
  `promotion_price` decimal(10,2) DEFAULT 0 COMMENT '朋友圈促销价格(未发布广场)',
- `limit_status` int(1) DEFAULT 0 COMMENT '朋友圈权限:0->所有人(需审核)；1->粉丝可见;2->铁粉(好友)可见',
+ `limit_status` int(1) DEFAULT 0 COMMENT '朋友圈权限:0->所有人(需审核)；1->粉丝可见;2->铁粉(好友)可见;3->仅自己可见',
  `delete_status` int(1) DEFAULT 0 COMMENT '删除状态：0->未删除；1->已删除',
  `verify_status` int(1) DEFAULT 0 COMMENT '审核状态：0->未审核；1->审核通过',
   PRIMARY KEY (`id`),
