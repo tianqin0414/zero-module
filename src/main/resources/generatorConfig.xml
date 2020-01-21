@@ -38,7 +38,7 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.macro.mall.tiny.mbg.mapper"
                              targetProject="./src/main/java"/>
         <!--生成全部表tableName设为%-->
-        <table tableName="pms_brand">
+        <table tableName="ums_user">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
 <!--        <table tableName="ums_admin">-->
