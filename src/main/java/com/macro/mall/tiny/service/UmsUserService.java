@@ -1,6 +1,7 @@
 package com.macro.mall.tiny.service;
 
-import com.macro.mall.tiny.mbg.model.UmsAdmin;
+import com.macro.mall.tiny.common.api.CommonResult;
+import com.macro.mall.tiny.mbg.model.UmsUser;
 import com.macro.mall.tiny.mbg.model.UmsPermission;
 
 import java.util.List;
@@ -13,12 +14,12 @@ public interface UmsUserService {
     /**
      * 根据用户名获取后台管理员
      */
-    UmsAdmin getAdminByUsername(String username);
+    UmsUser getAdminByUsername(String username);
 
     /**
      * 注册功能
      */
-    UmsAdmin register(UmsAdmin umsAdminParam);
+    CommonResult register(UmsUser umsUserParam);
 
     /**
      * 登录功能
