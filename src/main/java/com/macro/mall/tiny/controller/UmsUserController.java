@@ -4,7 +4,9 @@ import com.macro.mall.tiny.common.api.CommonResult;
 import com.macro.mall.tiny.dto.UmsAdminLoginParam;
 import com.macro.mall.tiny.mbg.model.UmsAdmin;
 import com.macro.mall.tiny.mbg.model.UmsPermission;
+import com.macro.mall.tiny.mbg.model.UmsUser;
 import com.macro.mall.tiny.service.UmsAdminService;
+import com.macro.mall.tiny.service.UmsUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,8 @@ import java.util.Map;
 public class UmsUserController {
     @Autowired
     private UmsAdminService adminService;
+    @Autowired
+    private UmsUserService userService;
     @Value("${jwt.tokenHeader}")
     private String tokenHeader;
     @Value("${jwt.tokenHead}")
@@ -35,12 +39,8 @@ public class UmsUserController {
     @ApiOperation(value = "用户注册")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<UmsAdmin> register(@RequestBody UmsAdmin umsAdminParam, BindingResult result) {
-        UmsAdmin umsAdmin = adminService.register(umsAdminParam);
-        if (umsAdmin == null) {
-            CommonResult.failed();
-        }
-        return CommonResult.success(umsAdmin);
+    public CommonResult<UmsAdmin> register(@RequestBody UmsUser umsUserParam, BindingResult result) {
+        return userService.register(umsUserParam);
     }
 
     @ApiOperation(value = "登录以后返回token")

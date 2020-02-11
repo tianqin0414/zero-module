@@ -72,14 +72,14 @@ public class UmsUserServiceImpl implements UmsUserService {
         UmsUserExample example = new UmsUserExample();
         example.createCriteria().andPhoneEqualTo(umsUser.getPhone());
         List<UmsUser> umsUserList = userMapper.selectByExample(example);
-        if (umsUserList.size() > 0) {
-            return null;
-        }
+//        if (umsUserList.size() > 0) {
+//            return null;
+//        }
         //将密码进行加密操作
         String encodePassword = passwordEncoder.encode(umsUser.getPassword());
         umsUser.setPassword(encodePassword);
         userMapper.insert(umsUser);
-        return CommonResult.failed();
+        return CommonResult.failed("22");
     }
 
     @Override
