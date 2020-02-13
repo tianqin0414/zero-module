@@ -28,6 +28,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * UmsAdminService实现类
@@ -67,6 +68,11 @@ public class UmsUserServiceImpl implements UmsUserService {
         UmsUser umsUser = new UmsUser();
         BeanUtils.copyProperties(umsUserParam, umsUser);
         umsUser.setCreateTime(new Date());
+        //注意replaceAll前面的是正则表达式
+        String uuid_str = UUID.randomUUID().toString().replaceAll("-","");
+        //Convert to byte[]
+        byte[] uuid = uuid_str.getBytes();
+        umsUser.setUuid(uuid);
         umsUser.setStatus(1);
         //查询是否有相同用户名的用户
         UmsUserExample example = new UmsUserExample();

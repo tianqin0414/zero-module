@@ -1,6 +1,8 @@
 package com.macro.mall.tiny.mbg.model;
 
 import io.swagger.annotations.ApiModelProperty;
+
+import javax.validation.constraints.Null;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -37,7 +39,7 @@ public class UmsUser implements Serializable {
     @ApiModelProperty(value = "个性签名")
     private String personalizedSignature;
 
-    @ApiModelProperty(value = "用户uuid")
+     @ApiModelProperty(value = "用户uuid",example = " ")
     private byte[] uuid;
 
     private static final long serialVersionUID = 1L;
